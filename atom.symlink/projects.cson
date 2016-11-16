@@ -1,0 +1,26 @@
+[
+  {
+    title: "ES6.io"
+    paths: [
+      "/Users/matt/es6.io"
+    ]
+  }
+  {
+    title: "A16Z Events"
+    paths: [
+      "/Users/matt/broadway/themes/vip/a16z-events"
+    ]
+  }
+  {
+    title: "Heatstreet"
+    paths: [
+      "/Users/matt/broadway/www/heatstreet/wp-content/themes/heatstreet"
+    ]
+  }
+  {
+    title: "Brookings"
+    paths: [
+      "/Users/matt/broadway/www/brookings/wp-content/themes/brookings"
+    ]
+  }
+]
