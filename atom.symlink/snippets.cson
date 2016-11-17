@@ -13,6 +13,20 @@
 #     'prefix': 'log'
 #     'body': 'console.log $1'
 #
+'.source.js':
+  'forEach (IE11+)':
+    'prefix': 'forEach'
+    'body': """
+    Array.prototype.forEach.call(iterable, (variable) => {
+      $1
+    });"""
+  'for of (IEEdge+)':
+    'prefix': 'forOf'
+    'body': """
+    for (variable of iterable) {
+      $1
+    }
+    """
 # Each scope (e.g. '.source.coffee' above) can only be declared once.
 #
 # This file uses CoffeeScript Object Notation (CSON).
