@@ -27,7 +27,6 @@
     userId: "3c508c91-fab2-8cc4-971c-afed90faf63d"
   gist:
     closeOnSave: true
-    token: "e83cf9fe472bfa7902832724223e03b0ff2104cf"
   linter:
     showErrorPanel: false
   "linter-phpcs":

@@ -9,6 +9,7 @@ atom.symlink/storage
 atom.symlink/themes
 atom.symlink/blob-store
 atom.symlink/recovery
+atom.symlink/gist.token
 
 # MacOS
 *.DS_Store
