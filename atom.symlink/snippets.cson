@@ -25,8 +25,13 @@
     'body': """
     for (variable of iterable) {
       $1
-    }
-    """
+    }"""
+  'addEventListener':
+    'prefix': 'addEvent'
+    'body': """
+    addEventListener('click', () => {
+      $1
+    });"""
 # Each scope (e.g. '.source.coffee' above) can only be declared once.
 #
 # This file uses CoffeeScript Object Notation (CSON).
