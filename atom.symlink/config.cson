@@ -29,6 +29,8 @@
     closeOnSave: true
   linter:
     showErrorPanel: false
+  "linter-eslint":
+    eslintrcPath: "~/.eslintrc"
   "linter-phpcs":
     codeStandardOrConfigFile: "WordPress"
     executablePath: "/Users/matt/wpcs/vendor/bin/phpcs"
