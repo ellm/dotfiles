@@ -43,7 +43,6 @@
     style:
       fontFamily: "monaco"
       fontSize: "13"
-      theme: "solarized-dark"
   "project-manager":
     alwaysOpenInSameWindow: true
     sortBy: "last modified"
