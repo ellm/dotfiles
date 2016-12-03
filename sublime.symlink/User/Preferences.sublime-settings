@@ -1,0 +1,85 @@
+{
+	"added_words":
+	[
+		"degregation",
+		"todo",
+		"php",
+		"brookings"
+	],
+	"auto_complete_selector": "source, text",
+	"binary_file_patterns":
+	[
+		"node_modules/*",
+		".sass-cache/*",
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
+	],
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/User/SublimeLinter/Twilight (SL).tmTheme",
+	"detect_indentation": true,
+	"detect_slow_plugins": false,
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"draw_minimap_border": false,
+	"draw_white_space": "selection",
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"styleguide"
+	],
+	"font_size": 14,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"TidyHTML5",
+		"Vintage"
+	],
+	"line_padding_top": 5,
+	"rulers":
+	[
+		80
+	],
+	"show_definitions": false,
+	"spell_check": false,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": false,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": false
+}

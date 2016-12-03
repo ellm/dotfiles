@@ -1,0 +1,9 @@
+{
+	"passes":
+	[
+		"ReindentSwitchBlocks"
+	],
+	"version": 4,
+	"php_bin":"/usr/local/php5/bin/php",
+	"format_on_save":true
+}

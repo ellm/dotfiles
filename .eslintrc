@@ -1,18 +1,49 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "globalReturn": true,
+      "impliedStrict": true,
+      "jsx": true
+    },
+    "sourceType": "module",
+  },
   "env": {
     "es6": true,
     "browser": true,
-    "jquery": true
-  },
-  "rules": {
-    "no-console": 0,
-    "no-unused-vars": 1,
-    "indent": [2, 2, {"SwitchCase": 1}],
-    "quotes": [2, "single"],
-    "semi": [2, "always"],
-    "no-multiple-empty-lines": [2, {"max": 1}],
+    "node": true,
+    "jquery": true,
+    // Optional Enables
+    "webextensions": false, // Enable if using Web Extensions
+    // Optional Testing Frameworks
+    "jasmine": false, // Enable if using Jasmine testing framework
+    "protractor": false, // Enable if using Protractor testing framework
+    "mocha": false // Enable if using Mocha testing framework
   },
   "globals": {
-    "jQuery": true
+    "jQuery": true,
+    "angular": false, // Enable if using Angular
   },
+  // Do NOT change these rules
+  "rules": {
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "quotes": [2, "single"], // Allows template literals if they have substitutions or line breaks
+    "semi": [2, "always"],
+    "no-multiple-empty-lines": [2, {"max": 1}],
+    "comma-dangle": [2, "always-multiline"],
+    "one-var": [2, "never"],
+    "no-var": [2], // Stop using var, use const or let instead
+    "prefer-const": [2],
+    "no-bitwise": [2],
+    "id-length": [2, {
+      "properties": "never",
+      "exceptions": ["x", "y", "i", "e", "n", "k"]
+    }],
+    "object-curly-spacing": [2, "always"],
+    "array-bracket-spacing": [2, "never"],
+    "space-before-blocks": [2, "always"],
+    "space-in-parens": [2, "never"],
+    "spaced-comment": [2, "always"],
+    "operator-linebreak": [2, "after"]
+  }
 }

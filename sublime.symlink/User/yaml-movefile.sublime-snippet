@@ -1,0 +1,107 @@
+<snippet>
+	<content><![CDATA[
+local:
+  vhost: "${1}"
+  wordpress_path: "/srv/www/${2}" # use an absolute path here
+
+  database:
+    name: "${3}"
+    user: "root"
+    password: "root"
+    host: "localhost"
+
+staging:
+  vhost: "http://${4}"
+  wordpress_path: "/srv/www/${5}" # use an absolute path here
+
+  database:
+    name: "${6}"
+    user: "${7}"
+    password: "${8}"
+    host: "localhost"
+    # port: "3308" # Use just in case you have exotic server config
+
+  exclude:
+    - ".git/"
+    - ".gitignore"
+    - ".sass-cache/"
+    - "bin/"
+    - "tmp/*"
+    - "Gemfile*"
+    - "Movefile"
+    - "wp-config.php"
+    - "wp-content/*.sql"
+    - "node_modules/"
+
+  # paths: # you can customize wordpress internal paths
+  #   wp_content: "wp-content"
+  #   uploads: "wp-content/uploads"
+  #   plugins: "wp-content/plugins"
+  #   themes: "wp-content/themes"
+  #   languages: "wp-content/languages"
+  #   themes: "wp-content/themes"
+
+  ssh:
+    host: "23.253.125.118"
+    user: "deploy"
+  # password: "" # password is optional, will use public keys if available.
+    port: 4827 # Port is optional
+  # rsync_options: "--verbose" # Additional rsync options, optional
+  #   gateway: # Gateway is optional
+  #     host: "host"
+  #     user: "user"
+  #     password: "password" # password is optional, will use public keys if available.
+
+production:
+  vhost: "${9}"
+  wordpress_path: "${10}" # use an absolute path here
+
+  database:
+    name: "${11}"
+    user: "${12}"
+    password: "${13}"
+    host: "localhost"
+    # port: "3308" # Use just in case you have exotic server config
+
+  exclude:
+    - ".git/"
+    - ".gitignore"
+    - ".sass-cache/"
+    - "bin/"
+    - "tmp/*"
+    - "Gemfile*"
+    - "Movefile"
+    - "wp-config.php"
+    - "wp-content/*.sql"
+    - "node_modules/"
+
+  # paths: # you can customize wordpress internal paths
+  #   wp_content: "wp-content"
+  #   uploads: "wp-content/uploads"
+  #   plugins: "wp-content/plugins"
+  #   themes: "wp-content/themes"
+  #   languages: "wp-content/languages"
+  #   themes: "wp-content/themes"
+
+  ssh:
+    host: "23.253.125.66"
+    user: "deploy"
+  # password: "" # password is optional, will use public keys if available.
+    port: 4827 # Port is optional
+  # rsync_options: "--verbose" # Additional rsync options, optional
+  #   gateway: # Gateway is optional
+  #     host: "host"
+  #     user: "user"
+  #     password: "password" # password is optional, will use public keys if available.
+
+  # ftp:
+  #   user: "user"
+  #   password: "password"
+  #   host: "host"
+  #   passive: true
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>move</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+        ${1} = new WP_Query( array(
+            'category_name' => 'news',
+            'posts_per_page' => (3)
+            ));
+
+            // The Loop
+            if ( ${2}->have_posts() ) {
+                while ( ${3}->have_posts() ) {
+                   ${4}->the_post();
+            ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <h1><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                    <time> <?php echo get_the_date(); ?></time>
+                    <p><?php the_excerpt(); ?></p>
+                    </article>
+            <?php }
+            } else {
+                // no posts found
+            }
+            /* Restore original Post Data */
+            wp_reset_postdata();
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>wpq</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.php</scope>
+</snippet>

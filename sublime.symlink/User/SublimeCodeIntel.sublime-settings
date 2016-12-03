@@ -1,0 +1,32 @@
+{
+    /*
+        Tooltips method:
+
+        "popup" - Uses Autocomplete popup for tooltips.
+        "panel" - Uses the output panel for tooltips.
+        "status" - Uses the status bar for tooltips (was the default).
+    */
+    "codeintel_tooltips": "status",
+
+    /*
+       Insert functions snippets.
+    */
+    "codeintel_snippets": false,
+
+    /* API Catalogs: SublimeCodeIntel uses API catalogs to
+    provide autocomplete and calltips for 3rd-party libraries. */
+
+    "codeintel_selected_catalogs": ["jQuery", "HTML5", "PHP"],
+
+    /*
+       Defines a configuration for each language.
+    */
+    "codeintel_language_settings": {
+        "JavaScript": {
+            "codeintel_scan_exclude_dir":["/build/", "/min/", "/static/", "node_modules"],
+        },
+        "PHP": {
+            "php": "/usr/bin/php",
+        }
+    },
+}
