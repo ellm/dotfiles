@@ -1,3 +1,7 @@
+#Sublime Editor
+sublime.symlink/User/*.last-run
+sublime.symlink/User/Package\ Control.cache/
+
 # Atom Editor
 atom.symlink/.apm
 atom.symlink/.node-gyp
