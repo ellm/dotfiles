@@ -26,7 +26,7 @@
 		"*.zip"
 	],
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/Twilight (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
 	"detect_indentation": true,
 	"detect_slow_plugins": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
@@ -71,7 +71,8 @@
 		"TidyHTML5",
 		"Vintage"
 	],
-	"line_padding_top": 5,
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
 	"rulers":
 	[
 		80
