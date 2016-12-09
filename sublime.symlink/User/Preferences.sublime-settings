@@ -4,7 +4,20 @@
 		"degregation",
 		"todo",
 		"php",
-		"brookings"
+		"brookings",
+		"jpg",
+		"jpeg",
+		"png",
+		"ttf",
+		"gif",
+		"tga",
+		"dds",
+		"ico",
+		"eot",
+		"pdf",
+		"swf",
+		"psd",
+		"styleguide"
 	],
 	"auto_complete_selector": "source, text",
 	"binary_file_patterns":
@@ -26,8 +39,12 @@
 		"*.zip"
 	],
 	"bold_folder_labels": true,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
+	"caret_extra_width": 1,
+	"caret_style": "phase",
 	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
-	"detect_indentation": true,
+	"detect_indentation": false,
 	"detect_slow_plugins": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"draw_minimap_border": false,
@@ -55,6 +72,7 @@
 		"*.db",
 		"*.sublime-workspace"
 	],
+	"find_selected_text": true,
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -71,16 +89,30 @@
 		"TidyHTML5",
 		"Vintage"
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
+	"match_brackets": true,
+	"match_brackets_angle": true,
+	"match_brackets_braces": true,
+	"match_brackets_content": true,
+	"match_brackets_square": true,
 	"rulers":
 	[
 		80
 	],
+	"scroll_past_end": true,
 	"show_definitions": false,
-	"spell_check": false,
+	"show_full_path": true,
+	"show_tab_close_buttons": false,
+	"spell_check": true,
 	"tab_size": 2,
-	"translate_tabs_to_spaces": false,
+	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
+	"use_tab_stops": true,
 	"word_wrap": false
 }
