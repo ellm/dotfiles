@@ -22,7 +22,7 @@
     // If empty, then use PATH version of php, else use the set value
     "phpcs_php_path": "/usr/bin/php",
     "phpcs_additional_args": {
-        "--standard": "WordPress",
+        "--standard": "WordPress-VIP",
         "-n": ""
     },
     // It seems python/sublime cannot always find the phpcs application

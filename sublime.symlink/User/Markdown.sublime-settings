@@ -1,9 +1,9 @@
 {
-	// "color_scheme": "Packages/MarkdownEditing/MarkdownEditor.tmTheme",
 	"color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
-	// "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Yellow.tmTheme",
 	"extensions":
 	[
-		"markdown"
-	]
+		"markdown",
+		"md"
+	],
+	"spell_check": true
 }

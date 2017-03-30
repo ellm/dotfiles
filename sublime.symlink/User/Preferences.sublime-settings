@@ -17,7 +17,13 @@
 		"pdf",
 		"swf",
 		"psd",
-		"styleguide"
+		"styleguide",
+		"Keyframes",
+		"Webpack",
+		"webpack",
+		"templating",
+		"readme",
+		"plugin"
 	],
 	"auto_complete_selector": "source, text",
 	"binary_file_patterns":
@@ -43,8 +49,8 @@
 	"caret_extra_top": 2,
 	"caret_extra_width": 1,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
-	"detect_indentation": false,
+	"color_scheme": "Packages/User/SublimeLinter/Oceanic Next (SL).tmTheme",
+	"detect_indentation": true,
 	"detect_slow_plugins": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"draw_minimap_border": false,
@@ -81,7 +87,7 @@
 		"CVS",
 		"styleguide"
 	],
-	"font_size": 14,
+	"font_size": 15,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -109,9 +115,10 @@
 	"show_definitions": false,
 	"show_full_path": true,
 	"show_tab_close_buttons": false,
-	"spell_check": true,
+	"spell_check": false,
 	"tab_size": 2,
-	"translate_tabs_to_spaces": true,
+	"theme": "Oceanic Next.sublime-theme",
+	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
 	"word_wrap": false
