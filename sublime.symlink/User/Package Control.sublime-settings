@@ -15,7 +15,6 @@
 		"GitStatusBar",
 		"Markdown Preview",
 		"MarkdownEditing",
-		"Oceanic Next Color Scheme",
 		"Package Control",
 		"Phpcs",
 		"PlainTasks",
@@ -27,6 +26,7 @@
 		"SublimeLinter",
 		"SublimeLinter-annotations",
 		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-contrib-htmlhint",
 		"SublimeLinter-php",
 		"Syntax Highlighting for Sass",
 		"Terminal"

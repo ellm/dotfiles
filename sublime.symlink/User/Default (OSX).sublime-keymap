@@ -1,3 +1,4 @@
 [
   { "keys": ["super+\\"], "command": "toggle_side_bar" },
+	{ "keys": ["super+shift+a"], "command": "alignment" },
 ]

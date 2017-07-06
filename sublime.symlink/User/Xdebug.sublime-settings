@@ -1,0 +1,9 @@
+{
+    "path_mapping": {
+        "/var/www/heatstreet/" : "/Users/matt/broadway/www/heatstreet/",
+        // "/var/www/htdocs/example/" : "C:/git/websites/example/"
+    },
+    "url": "https://heatstreet.alley.dev/politics/how-many-vacations-do-jared-and-ivanka-plan-to-take/",
+    "super_globals": true,
+    "close_on_stop": true
+}
