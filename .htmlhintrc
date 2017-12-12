@@ -3,12 +3,14 @@
   "attr-lowercase": true,
   "attr-value-double-quotes": true,
   "doctype-first": false,
-  "tag-pair": false,
+  "tag-pair": true,
+  "tag-self-close": true,
   "spec-char-escape": false,
   "id-unique": true,
   "src-not-empty": true,
   "attr-no-duplication": true,
   "title-require": false,
   "attr-value-not-empty": true,
-  "alt-require": true
+  "alt-require": true,
+  "space-tab-mixed-disabled": "tab"
 }

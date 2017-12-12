@@ -5,7 +5,7 @@
         "error_color": "D02000",
         "gutter_theme": "none",
         "gutter_theme_excludes": [],
-        "lint_mode": "load/save",
+        "lint_mode": "background",
         "linters": {
             "annotations": {
                 "@disable": false,
@@ -18,7 +18,8 @@
                     "NOTE",
                     "README",
                     "TODO",
-                    "@todo"
+                    "@todo",
+                    "@see"
                 ]
             },
             "eslint": {
@@ -30,33 +31,50 @@
                 ]
             },
             "htmlhint": {
-                "@disable": false,
+                "@disable": true,
                 "args": [
                     "--config",
                     "/Users/matt/.htmlhintrc"
                 ],
                 "excludes": []
             },
+            "json": {
+                "@disable": false,
+                "args": [],
+                "excludes": [],
+                "strict": true
+            },
             "php": {
                 "@disable": false,
                 "args": [],
                 "excludes": []
             },
-            "scss": {
+            "phpcs": {
                 "@disable": false,
+                "args": [],
+                "excludes": [],
+                "standard": ""
+            },
+            "scss": {
+                "@disable": true,
                 "args": [],
                 "exclude-linter": "",
                 "excludes": [],
                 "include-linter": ""
+            },
+            "stylelint": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
             }
         },
-        "mark_style": "stippled underline",
+        "mark_style": "outline",
         "no_column_highlights_line": true,
         "passive_warnings": true,
         "paths": {
             "linux": [],
             "osx": [
-                "/usr/local/bin"
+                "/Users/matt/broadway/bin"
             ],
             "windows": []
         },

@@ -56,6 +56,7 @@
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"draw_minimap_border": false,
 	"draw_white_space": "selection",
+	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
 		"*.pyc",

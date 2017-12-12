@@ -8,7 +8,6 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
@@ -31,7 +30,7 @@ set term=screen-256color     " make vim look nice in tmux on macOS/iTerm
 syntax enable
 set encoding=utf-8
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 set omnifunc=syntaxcomplete#Complete " enable autocomplete
 " NerdTree
 map <C-\> :NERDTreeToggle<CR>
