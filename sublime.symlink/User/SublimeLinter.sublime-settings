@@ -1,105 +1,81 @@
 {
-    "user": {
-        "debug": false,
-        "delay": 0.25,
-        "error_color": "D02000",
-        "gutter_theme": "none",
-        "gutter_theme_excludes": [],
-        "lint_mode": "background",
-        "linters": {
-            "annotations": {
-                "@disable": false,
-                "args": [],
-                "errors": [
-                    "FIXME"
-                ],
-                "excludes": [],
-                "warnings": [
-                    "NOTE",
-                    "README",
-                    "TODO",
-                    "@todo",
-                    "@see"
-                ]
-            },
-            "eslint": {
-                "@disable": false,
-                "args": [],
-                "excludes": [
-                    "**/node_modules/**",
-                    "**/vendor/**"
-                ]
-            },
-            "htmlhint": {
-                "@disable": true,
-                "args": [
-                    "--config",
-                    "/Users/matt/.htmlhintrc"
-                ],
-                "excludes": []
-            },
-            "json": {
-                "@disable": false,
-                "args": [],
-                "excludes": [],
-                "strict": true
-            },
-            "php": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
-            "phpcs": {
-                "@disable": false,
-                "args": [],
-                "excludes": [],
-                "standard": ""
-            },
-            "scss": {
-                "@disable": true,
-                "args": [],
-                "exclude-linter": "",
-                "excludes": [],
-                "include-linter": ""
-            },
-            "stylelint": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            }
-        },
-        "mark_style": "outline",
-        "no_column_highlights_line": true,
-        "passive_warnings": true,
-        "paths": {
-            "linux": [],
-            "osx": [
-                "/Users/matt/broadway/bin"
+    "debug": false,
+    "delay": 0.25,
+    "gutter_theme": "none",
+    "lint_mode": "background",
+    "linters": {
+        "annotations": {
+            "disable": false,
+            "args": [],
+            "errors": [
+                "FIXME"
             ],
-            "windows": []
+            "excludes": [],
+            "warnings": [
+                "NOTE",
+                "README",
+                "TODO"
+            ]
         },
-        "python_paths": {
-            "linux": [],
-            "osx": [],
-            "windows": []
+        "eslint": {
+            "disable": false,
+            "args": [],
+            "excludes": [
+                "**/build/**",
+                "**/node_modules/**",
+                "**/vendor/**",
+                "**/static/**"
+            ]
         },
-        "rc_search_limit": 3,
-        "shell_timeout": 10,
-        "show_errors_on_save": false,
-        "show_marks_in_minimap": false,
-        "syntax_map": {
-            "JavaScript (Babel)": "javascript",
-            "html (django)": "html",
-            "html (rails)": "html",
-            "html 5": "html",
-            "php": "html",
-            "python django": "python"
+        "htmlhint": {
+            "disable": true,
+            "args": [
+                "--config",
+                "/Users/matt/.htmlhintrc"
+            ],
+            "excludes": []
         },
-        "tooltip_fontsize": "1rem",
-        "tooltip_theme": "Packages/SublimeLinter/tooltip-themes/Default/Default.tooltip-theme",
-        "tooltip_theme_excludes": [],
-        "tooltips": false,
-        "warning_color": "DDB700",
-        "wrap_find": true
-    }
+        "json": {
+            "disable": false,
+            "args": [],
+            "excludes": [],
+            "strict": true
+        },
+        "php": {
+            "disable": false,
+            "args": [],
+            "excludes": []
+        },
+        "phpcs": {
+            "disable": false,
+            "args": [
+                "--standard=ruleset.xml"
+            ],
+            "executable": "/Users/matt/broadway/bin/phpcs",
+            "excludes": [],
+            "standard": ""
+        },
+        "scss": {
+            "disable": true,
+            "args": [],
+            "exclude-linter": "",
+            "excludes": [],
+            "include-linter": ""
+        },
+        "stylelint": {
+            "disable": false,
+            "args": [],
+            "excludes": []
+        }
+    },
+    "no_column_highlights_line": true,
+    "paths": {
+        "linux": [],
+        "osx": [
+            "/Users/matt/broadway/bin"
+        ],
+        "windows": []
+    },
+    "shell_timeout": 10,
+    "show_marks_in_minimap": false,
 }

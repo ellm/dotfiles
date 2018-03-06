@@ -1,6 +1,7 @@
 #Sublime Editor
 sublime.symlink/User/*.last-run
 sublime.symlink/User/Package\ Control.cache/
+sublime.symlink/User/Gist.sublime-settings
 
 # Atom Editor
 atom.symlink/.apm

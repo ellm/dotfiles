@@ -28,7 +28,7 @@
 	"auto_complete_selector": "source, text",
 	"binary_file_patterns":
 	[
-		"static/prototype/*",
+		"static/*",
 		"node_modules/*",
 		".sass-cache/*",
 		"*.jpg",
@@ -50,7 +50,7 @@
 	"caret_extra_top": 2,
 	"caret_extra_width": 1,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/SublimeLinter/Mariana (SL).tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.tmTheme",
 	"detect_indentation": true,
 	"detect_slow_plugins": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
@@ -123,5 +123,6 @@
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
-	"word_wrap": false
+	"word_wrap": false,
+	"wrap_width": 80
 }
