@@ -5,15 +5,17 @@
 	],
 	"installed_packages":
 	[
-		"Babel",
+		"Alignment",
+		"AutoFileName",
 		"Color Highlighter",
 		"DocBlockr",
 		"EditorConfig",
+		"Emmet",
 		"Gist",
 		"GitGutter",
 		"Github Tools",
 		"Handlebars",
-		"Hayaku - tools for writing CSS faster",
+		"JSCustom",
 		"Package Control",
 		"PlainTasks",
 		"Sass",
@@ -21,10 +23,10 @@
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-annotations",
-		"SublimeLinter-contrib-stylelint",
 		"SublimeLinter-eslint",
 		"SublimeLinter-json",
 		"SublimeLinter-phpcs",
+		"SublimeLinter-stylelint",
 		"Terminal"
 	]
 }

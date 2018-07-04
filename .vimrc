@@ -11,11 +11,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'ervandew/supertab'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-fugitive'
 Plugin 'alvan/vim-closetag'
 Plugin 'jiangmiao/auto-pairs'
 " All Plugins must be added before the following line
@@ -26,20 +28,24 @@ set nobackup
 set nowritebackup
 set noswapfile
 " Theme and Syntax
-set term=screen-256color     " make vim look nice in tmux on macOS/iTerm
+" set term=screen-256color     " make vim look nice in tmux on macOS/iTerm
 syntax enable
 set encoding=utf-8
 set background=dark
-" colorscheme solarized
+colorscheme solarized
 set omnifunc=syntaxcomplete#Complete " enable autocomplete
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#branch#enabled=1
 " NerdTree
-map <C-\> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.git']
 " Editor
 set mouse=a       " Allow mouse
 set number        " Show number lines
+" set relativenumber " Show relative number lines
 set numberwidth=5 " Set width of number lines
 set backspace=2   " Backspace deletes like most programs in insert mode
 set ruler         " Show the cursor position all the time
@@ -62,7 +68,7 @@ set colorcolumn=80
 " Display tabs and trailing spaces visually
 " set listchars=eol:↲,tab:▶▹,nbsp:␣,extends:…,trail:•
 " other characters: ↩ ↵ ↲ ␣ • … → » ∎ ¶ ▶ ▸ ▷ ▹
-set list listchars=tab:▹·,trail:·,nbsp:␣
+" set list listchars=tab:▹·,trail:·,nbsp:␣
 set history=1000  " remember more commands and search history
 set undolevels=1000  " use many levels of undo
 autocmd BufWritePre * %s/\s\+$//e " auto remove trailing whitespace on save
@@ -77,6 +83,12 @@ let g:ctrlp_working_path_mode = 0 " start search in directory vim started
 let g:ctrlp_custom_ignore = 'static\|node_modules\|DS_Store\|git' " don't search these directories
 " Mappings - Normal Mode
 let mapleader = ";"                     " map leader to semi-colon
+" Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+nnoremap <Leader>\ :NERDTreeToggle<CR>
 nnoremap <Leader>p :CtrlP<CR>           " fire CtrlP fuzzy finder
 nnoremap <Leader>w :w<CR>               " Save file
 nnoremap <Leader>l :nohl<CR><C-l>       " redraw screen / remove search highlighting
@@ -94,17 +106,3 @@ nnoremap <C-H> <C-W><C-H>               " map split navigation Ctrl+H (left)
 set splitbelow                          " Open new split panes to bottom
 set splitright                          " Open new split panes to right
 autocmd BufNewFile,BufRead *.scss set ft=scss.css " Treat SCSS like CSS
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_loc_list_height = 3
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_php_checkers = ['php','phpcs']
-let g:syntastic_php_phpcs_args = '--standard=WordPress-VIP'
-" If not found then the default standard is used
-let g:syntastic_wordpress_phpcs_standard_file = 'codesniffer.ruleset.xml'

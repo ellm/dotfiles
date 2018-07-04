@@ -1,8 +1,4 @@
 {
-    "debug": false,
-    "delay": 0.25,
-    "gutter_theme": "none",
-    "lint_mode": "background",
     "linters": {
         "annotations": {
             "disable": false,
@@ -48,12 +44,9 @@
         },
         "phpcs": {
             "disable": false,
-            "args": [
-                "--standard=ruleset.xml"
-            ],
-            "executable": "/Users/matt/broadway/bin/phpcs",
-            "excludes": [],
-            "standard": ""
+            "executable": "~/broadway/bin/phpcs",
+            // Note: `standard` is set on a per-project basis
+            // https://github.com/SublimeLinter/SublimeLinter-phpcs#per-project-standards
         },
         "scss": {
             "disable": true,
@@ -65,17 +58,39 @@
         "stylelint": {
             "disable": false,
             "args": [],
-            "excludes": []
+            "excludes": [
+                "**/build/**",
+                "**/node_modules/**",
+                "**/vendor/**",
+                "**/static/**"
+            ]
         }
     },
     "no_column_highlights_line": true,
     "paths": {
-        "linux": [],
         "osx": [
-            "/Users/matt/broadway/bin"
+            "~/broadway/bin"
         ],
-        "windows": []
     },
-    "shell_timeout": 10,
     "show_marks_in_minimap": false,
+    "styles": [
+        {
+            "mark_style": "outline",
+            "priority": 1,
+            "scope": "region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter",
+            "icon": "none",
+            "types": [
+                "warning"
+            ]
+        },
+        {
+            "mark_style": "outline",
+            "priority": 1,
+            "scope": "region.redish markup.deleted.sublime_linter markup.error.sublime_linter",
+            "icon": "none",
+            "types": [
+                "error"
+            ]
+        }
+    ],
 }

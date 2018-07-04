@@ -89,7 +89,7 @@
 		"CVS",
 		"styleguide"
 	],
-	"font_size": 14,
+	"font_size": 12,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -119,7 +119,7 @@
 	"show_tab_close_buttons": false,
 	"spell_check": false,
 	"tab_size": 2,
-	"theme": "Default.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
