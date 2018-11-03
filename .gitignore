@@ -1,3 +1,8 @@
+#Vim
+.vim/bundle
+.vim/autoload
+.vim/session
+
 #Sublime Editor
 sublime.symlink/User/*.last-run
 sublime.symlink/User/Package\ Control.cache/
@@ -23,7 +28,6 @@ atom.symlink/gist.token
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*

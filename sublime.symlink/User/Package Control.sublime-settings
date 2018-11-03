@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Alignment",
 		"AutoFileName",
 		"Color Highlighter",
@@ -17,6 +18,7 @@
 		"Handlebars",
 		"JSCustom",
 		"Package Control",
+		"PHP-Twig",
 		"PlainTasks",
 		"Sass",
 		"SideBarEnhancements",
@@ -27,6 +29,7 @@
 		"SublimeLinter-json",
 		"SublimeLinter-phpcs",
 		"SublimeLinter-stylelint",
-		"Terminal"
+		"Terminal",
+		"WordPress"
 	]
 }

@@ -1,0 +1,41 @@
+snippet php
+<?php $1 ?>
+endsnippet
+
+snippet echoe
+echo esc_$1( $2 );
+endsnippet
+
+snippet vard
+var_dump( $1 );
+endsnippet
+
+snippet for
+foreach ( $${1:vars} as $${2:$var} ) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ?for
+<?php foreach ( $${1:vars} as $${2:$var} ) : ?>
+	${0:${VISUAL}}
+<?php endforeach ?>
+endsnippet
+
+snippet if
+if ( $${1:var} ) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ?if
+<?php if ( $${1:var} ) : ?>
+	${0:${VISUAL}}
+<?php endif ?>
+endsnippet
+
+snippet fun
+function ${1}( ${3} ) {
+	${0:${VISUAL}}
+}
+endsnippet

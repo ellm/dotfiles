@@ -14,7 +14,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mileszs/ack.vim'
 Plugin 'w0rp/ale'
-Plugin 'ervandew/supertab'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-sleuth'
@@ -27,6 +26,8 @@ Plugin 'dhruvasagar/vim-prosession'
 Plugin 'tpope/vim-commentary'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'chriskempson/base16-vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'valloric/youcompleteme'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,7 +53,15 @@ let NERDTreeWinSize=50
 let NERDTreeAutoDeleteBuffer = 1 " auto delete the buffer of file deleted
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+" == Snippets
+let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
 " == Editor
+set gfn=Monaco:h12 " Set font
+set linespace=3   " Line height (for MacVim)
 set mouse=a       " Allow mouse
 set number        " Show number lines
 " set relativenumber " Show relative number lines
@@ -71,13 +80,15 @@ set shiftwidth=2  " Set number of space characters inserted for indentation
 " set expandtab     " Tabs are spaces
 " set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-set cursorline    " highlight current line
+" set cursorline    " highlight current line
 " make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=80
 " display tabs and trailing spaces visually
 set list
 set listchars=tab:▸\ ,nbsp:.,extends:>,precedes:<
+set wrap! " disable wordwrap
+set sidescroll=5
 " other characters: ↩ ↵ ↲ ␣ • … → » ∎ ¶ ▶ ▸ ▷ ▹
 set history=1000  " remember more commands and search history
 set undolevels=1000  " use many levels of undo
