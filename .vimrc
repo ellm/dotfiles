@@ -28,6 +28,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'chriskempson/base16-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'valloric/youcompleteme'
+Plugin 'shawncplus/phpcomplete.vim'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
