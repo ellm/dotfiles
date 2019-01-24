@@ -5,13 +5,17 @@
             "disable": false,
             "args": [],
             "errors": [
-                "FIXME"
+                "FIXME",
+                "@fixme"
             ],
             "excludes": [],
             "warnings": [
                 "NOTE",
                 "README",
-                "TODO"
+                "TODO",
+                "@note",
+                "@readme",
+                "@todo"
             ]
         },
         "eslint": {

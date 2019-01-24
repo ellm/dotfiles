@@ -8,15 +8,15 @@
 		"A File Icon",
 		"Alignment",
 		"AutoFileName",
-		"Color Highlighter",
+		"Babel",
+		"Color Highlight",
 		"DocBlockr",
 		"EditorConfig",
-		"Emmet",
 		"Gist",
 		"GitGutter",
 		"Github Tools",
 		"Handlebars",
-		"JSCustom",
+		"LSP",
 		"Package Control",
 		"PHP-Twig",
 		"PlainTasks",
@@ -29,7 +29,6 @@
 		"SublimeLinter-json",
 		"SublimeLinter-phpcs",
 		"SublimeLinter-stylelint",
-		"Terminal",
-		"WordPress"
+		"termX"
 	]
 }

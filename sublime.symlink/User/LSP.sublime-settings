@@ -1,0 +1,18 @@
+{
+	"clients":
+	{
+		"js":
+		{
+			"command":["lsp-tsserver"],
+			"enabled": true,
+			"languageId": "javascript",
+			"scopes":["source.js"],
+			"syntaxes":
+			[
+				"Packages/JavaScript/JavaScript.sublime-syntax",
+				"Packages/Babel/JavaScript (Babel).sublime-syntax"
+			]
+		}
+	},
+	"log_debug": true,
+}
