@@ -1,131 +1,179 @@
-" Vundle Plugins
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" ------- General Settings -------
+set nocompatible                 " be iMproved, required
+filetype off                     " required for Vundle
+
+set macligatures                 " enable font ligatures
+set guifont=Fira\ Code:h12       " set a pretty font
+set linespace=3                  " line height (for MacVim)
+set number                       " show number lines
+set relativenumber               " show relative number lines
+set numberwidth=5                " set width of number lines
+set backspace=indent,eol,start   " backspace deletes like most programs in insert mode
+set ruler                        " show the cursor position all the time
+set laststatus=2                 " always display the status line
+set tabstop=2                    " number of visual spaces per tab
+set shiftwidth=2                 " Set number of space characters inserted for indentation
+set noexpandtab                  " expand tab
+set smartindent                  " smart indent the next line
+set foldenable                   " enable code folding
+set nobackup                     " disable backups
+set nowritebackup                " disable backups
+set noswapfile                   " disable swapfile
+set encoding=utf-8               " default encoding
+set textwidth=80                 " show me 80 characters mark
+set colorcolumn=80               " show me 80 characters mark
+set list                         " display tabs and trailing spaces visually
+set listchars=tab:▸\ ,nbsp:.,extends:>,precedes:<
+set nowrap                       " disable wordwrap
+set sidescroll=1                 " incrementally scroll one character at a time
+set history=1000                 " remember more commands and search history
+set undolevels=1000              " use many levels of undo
+autocmd BufWritePre * %s/\s\+$//e " auto remove trailing whitespace on save
+set clipboard=unnamed            " use system clipboard by default
+set updatetime=100
+set showmatch                    " highlight matching [{()}]
+set incsearch                    " do incremental searching
+set hlsearch                     " highlight matches
+set ignorecase                   " ignore case when searching
+set smartcase                    " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set guioptions-=R                " get rid of right macvim scrollbar
+set guioptions-=L                " get rid of left macvim scrollbar
+set guioptions-=r                " get rid of right macvim scrollbar
+set guioptions-=l                " get rid of left macvim scrollbar
+set guioptions-=m                " get rid of menu bar
+set guioptions-=T                " get rid of toolbar
+
+" ------- Plugin Settings -------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
+
 Plugin 'scrooloose/nerdtree'
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.git']
+let NERDTreeWinSize=50
+let NERDTreeAutoDeleteBuffer = 1 " auto delete the buffer of file deleted
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
 Plugin 'kien/ctrlp.vim'
+let g:ctrlp_switch_buffer = 0 " always open files in a new buffer
+let g:ctrlp_working_path_mode = 0 " start search in directory vim started
+let g:ctrlp_custom_ignore = {
+ \ 'dir': 'build\|static\|node_modules\|DS_Store\|git',
+ \ 'file': 'tags',
+ \ }
+let g:ctrlp_use_caching=0 " update without having to reload
+
 Plugin 'airblade/vim-gitgutter'
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='oceanicnext'
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 Plugin 'mileszs/ack.vim'
+
 Plugin 'w0rp/ale'
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let g:ale_lint_on_save = 1
+let g:ale_use_global_executables = 1
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'php': ['php', 'phpcs'],
+\   'scss': ['stylelint'],
+\}
+let g:ale_scss_stylelint_options = '--config client/config/stylelint.config.js'
+let g:ale_javascript_eslint_options = '--config ./.eslintrc'
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\}
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma ES5'
+" let g:ale_php_phpcs_executable = '~/broadway/bin/phpcs'
+" let g:ale_php_phpcs_standard = 'WordPress'
+
 Plugin 'pangloss/vim-javascript'
+let g:javascript_plugin_jsdoc = 1 " enable jsdoc
+
 Plugin 'mxw/vim-jsx'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-fugitive'
 Plugin 'alvan/vim-closetag'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
 Plugin 'tpope/vim-commentary'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'chriskempson/base16-vim'
+
 Plugin 'SirVer/ultisnips'
-Plugin 'valloric/youcompleteme'
-Plugin 'shawncplus/phpcomplete.vim'
-" All Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" Disable backups (Git takes care of that)
-set nobackup
-set nowritebackup
-set noswapfile
-" == Theme and Syntax
-syntax enable
-set encoding=utf-8
-set background=dark
-colorscheme base16-default-dark
-set omnifunc=syntaxcomplete#Complete " enable autocomplete
-let g:airline_theme='base16'
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#branch#enabled=1
-let g:airline#extensions#tabline#enabled = 1
-" == NerdTree
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.git']
-let NERDTreeWinSize=50
-" let NERDTreeQuitOnOpen = 1 " auto close upon opening a file.
-let NERDTreeAutoDeleteBuffer = 1 " auto delete the buffer of file deleted
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-" == Snippets
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
-" == Editor
-set gfn=Monaco:h12 " Set font
-set linespace=3   " Line height (for MacVim)
-set mouse=a       " Allow mouse
-set number        " Show number lines
-" set relativenumber " Show relative number lines
-set numberwidth=5 " Set width of number lines
-set backspace=2   " Backspace deletes like most programs in insert mode
-set ruler         " Show the cursor position all the time
-set showcmd       " Display incomplete commands
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-set autoread      " Automatically refresh changed files
-" indentation (using tpope/sleuth)
-set tabstop=2     " Number of visual spaces per TAB
-set shiftwidth=2  " Set number of space characters inserted for indentation
-" set smarttab      " Insert tabs on the start of a line according to shiftwidth, not tabstop
-" set shiftround    " Use multiple of shiftwidth when indenting with '<' and '>'
-" set expandtab     " Tabs are spaces
-" set autoindent    " always set autoindenting on
-set copyindent    " copy the previous indentation on autoindenting
-" set cursorline    " highlight current line
-" make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=80
-" display tabs and trailing spaces visually
-set list
-set listchars=tab:▸\ ,nbsp:.,extends:>,precedes:<
-set wrap! " disable wordwrap
-set sidescroll=5
-" other characters: ↩ ↵ ↲ ␣ • … → » ∎ ¶ ▶ ▸ ▷ ▹
-set history=1000  " remember more commands and search history
-set undolevels=1000  " use many levels of undo
-autocmd BufWritePre * %s/\s\+$//e " auto remove trailing whitespace on save
-set clipboard=unnamed " use system clipboard by default
-set updatetime=100
-" == Search
-set showmatch     " highlight matching [{()}]
-set incsearch     " Do incremental searching
-set hlsearch      " highlight matches
-set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
-" == CtrlP
-let g:ctrlp_switch_buffer = 0 " always open files in a new buffer
-let g:ctrlp_working_path_mode = 0 " start search in directory vim started
-let g:ctrlp_custom_ignore = 'build\|static\|node_modules\|DS_Store\|git' " don't search these directories
-let g:ctrlp_use_caching=0 " update without having to reload
-" == Mappings - Normal Mode
+
+Plugin 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabLongestEnhanced = 1
+let g:SuperTabLongestHighlight = 1
+
+Plugin 'mhartington/oceanic-next'
+Plugin 'ap/vim-css-color'
+" All Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" ------- Theme/Syntax Settings -------
+syntax enable
+if (has("termguicolors"))
+  set termguicolors
+endif
+colorscheme OceanicNext
+if !has("gui_macvim")
+  set term=screen-256color
+  let $TERM='screen-256color'
+endif
+" Disable visual bell and flash
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+
+" ------- Preferences per filetype -------
+autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS smartindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP smartindent shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
+autocmd FileType javascript,json,javascript.jsx setlocal omnifunc=javascriptcomplete#CompleteJS smartindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
+" ------- Custom Mappings -------
 let mapleader = ";"                     " map leader to semi-colon
 " disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-nnoremap <Leader>\ :NERDTreeToggle<CR>
+nnoremap <Leader>\ :NERDTreeToggle<CR>  " open NerdTree
 nnoremap <Leader>p :CtrlP<CR>           " fire CtrlP fuzzy finder
 nnoremap <Leader>s :w<CR>               " Save file
-nnoremap <Leader>l :nohl<CR><C-l>       " redraw screen / remove search highlighting
+nnoremap <CR> :nohlsearch<cr>           " redraw screen / remove search highlighting
 nnoremap <Leader>w :bd<CR>              " delete buffer
+nnoremap <leader>t :enew<cr>            " open a new empty buffer
 nnoremap <leader>] :bn<CR>              " go to next buffer
 nnoremap <leader>[ :bp<CR>              " go to previous buffer
 nnoremap <leader>i *                    " search for current word in file
 nnoremap <leader>f :Ack<CR>             " search for current word in folder
 nnoremap <leader>k :m .-2<CR>==         " move current line up
 nnoremap <leader>j :m .+1<CR>==         " move current line down
-" Splits
+nnoremap <leader>a :GitGutterPreviousHunk  " GitGutter previous hunk.
+nnoremap <leader>x :GitGutterNextHunk   " GitGutter next hunk.
+nnoremap <leader>z :GitGutterUndoHunk   " GitGutter undo change.
+nmap <leader>v :split $MYVIMRC<CR>      " edit vimrc in a split.
 nnoremap <C-J> <C-W><C-J>               " map spilt navigation Ctrl+J (up)
 nnoremap <C-K> <C-W><C-K>               " map split navigation Ctrl+K (down)
 nnoremap <C-L> <C-W><C-L>               " map split navigation Ctrl+L (right)
