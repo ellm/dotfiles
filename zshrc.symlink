@@ -85,7 +85,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-# Use MacVim binary in terminal instead of system.
-alias vim="mvim -v"
-alias vi="mvim -v"

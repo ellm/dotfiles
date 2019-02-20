@@ -2,17 +2,13 @@
 set nocompatible                 " be iMproved, required
 filetype off                     " required for Vundle
 
-set macligatures                 " enable font ligatures
-set guifont=Fira\ Code:h12       " set a pretty font
-set linespace=3                  " line height (for MacVim)
 set number                       " show number lines
-set relativenumber               " show relative number lines
 set numberwidth=5                " set width of number lines
 set backspace=indent,eol,start   " backspace deletes like most programs in insert mode
 set ruler                        " show the cursor position all the time
 set laststatus=2                 " always display the status line
 set tabstop=2                    " number of visual spaces per tab
-set shiftwidth=2                 " Set number of space characters inserted for indentation
+set shiftwidth=2                 " set number of space characters inserted for indentation
 set noexpandtab                  " expand tab
 set smartindent                  " smart indent the next line
 set foldenable                   " enable code folding
@@ -23,7 +19,7 @@ set encoding=utf-8               " default encoding
 set textwidth=80                 " show me 80 characters mark
 set colorcolumn=80               " show me 80 characters mark
 set list                         " display tabs and trailing spaces visually
-set listchars=tab:▸\ ,nbsp:.,extends:>,precedes:<
+set listchars=tab:\│\ ,nbsp:.,extends:>,precedes:<
 set nowrap                       " disable wordwrap
 set sidescroll=1                 " incrementally scroll one character at a time
 set history=1000                 " remember more commands and search history
@@ -36,12 +32,21 @@ set incsearch                    " do incremental searching
 set hlsearch                     " highlight matches
 set ignorecase                   " ignore case when searching
 set smartcase                    " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set noshowmode                   " hide the default mode text (powerline replaces it)
+set splitbelow                   " open new split panes to bottom
+set splitright                   " open new split panes to right
+
+if has("gui_macvim")
+set macligatures                 " enable font ligatures
+set guifont=Fira\ Code:h12       " set a pretty font
+set linespace=3                  " line height (for MacVim)
 set guioptions-=R                " get rid of right macvim scrollbar
 set guioptions-=L                " get rid of left macvim scrollbar
 set guioptions-=r                " get rid of right macvim scrollbar
 set guioptions-=l                " get rid of left macvim scrollbar
 set guioptions-=m                " get rid of menu bar
 set guioptions-=T                " get rid of toolbar
+endif
 
 " ------- Plugin Settings -------
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -51,11 +56,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.git']
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 let NERDTreeWinSize=50
 let NERDTreeAutoDeleteBuffer = 1 " auto delete the buffer of file deleted
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+nnoremap <Leader>\ :NERDTreeToggle<CR>  " open NerdTree
 
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_switch_buffer = 0 " always open files in a new buffer
@@ -65,18 +71,22 @@ let g:ctrlp_custom_ignore = {
  \ 'file': 'tags',
  \ }
 let g:ctrlp_use_caching=0 " update without having to reload
+nnoremap <Leader>p :CtrlP<CR>           " fire CtrlP fuzzy finder
 
 Plugin 'airblade/vim-gitgutter'
+nnoremap <leader>a :GitGutterPreviousHunk  " GitGutter previous hunk.
+nnoremap <leader>x :GitGutterNextHunk   " GitGutter next hunk.
+nnoremap <leader>z :GitGutterUndoHunk   " GitGutter undo change.
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='oceanicnext'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#branch#enabled=1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
 
 Plugin 'mileszs/ack.vim'
+cnoreabbrev Ack Ack!
+nnoremap <Leader>f :Ack!<Space>
 
 Plugin 'w0rp/ale'
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
@@ -92,24 +102,27 @@ let g:ale_linters = {
 \}
 let g:ale_scss_stylelint_options = '--config client/config/stylelint.config.js'
 let g:ale_javascript_eslint_options = '--config ./.eslintrc'
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\}
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma ES5'
 " let g:ale_php_phpcs_executable = '~/broadway/bin/phpcs'
 " let g:ale_php_phpcs_standard = 'WordPress'
+
+" TODO:
+Plugin 'prettier/vim-prettier'
+" let g:prettier#config#single_quote = 'true'
 
 Plugin 'pangloss/vim-javascript'
 let g:javascript_plugin_jsdoc = 1 " enable jsdoc
 
 Plugin 'mxw/vim-jsx'
-Plugin 'alvan/vim-closetag'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mattn/emmet-vim'
+
+Plugin 'rizzatti/dash.vim'
+nmap <silent> <leader>d <Plug>DashSearch
 
 Plugin 'SirVer/ultisnips'
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
@@ -126,6 +139,7 @@ let g:SuperTabLongestHighlight = 1
 
 Plugin 'mhartington/oceanic-next'
 Plugin 'ap/vim-css-color'
+
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -158,25 +172,16 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-nnoremap <Leader>\ :NERDTreeToggle<CR>  " open NerdTree
-nnoremap <Leader>p :CtrlP<CR>           " fire CtrlP fuzzy finder
-nnoremap <Leader>s :w<CR>               " Save file
 nnoremap <CR> :nohlsearch<cr>           " redraw screen / remove search highlighting
 nnoremap <Leader>w :bd<CR>              " delete buffer
 nnoremap <leader>t :enew<cr>            " open a new empty buffer
 nnoremap <leader>] :bn<CR>              " go to next buffer
 nnoremap <leader>[ :bp<CR>              " go to previous buffer
 nnoremap <leader>i *                    " search for current word in file
-nnoremap <leader>f :Ack<CR>             " search for current word in folder
 nnoremap <leader>k :m .-2<CR>==         " move current line up
 nnoremap <leader>j :m .+1<CR>==         " move current line down
-nnoremap <leader>a :GitGutterPreviousHunk  " GitGutter previous hunk.
-nnoremap <leader>x :GitGutterNextHunk   " GitGutter next hunk.
-nnoremap <leader>z :GitGutterUndoHunk   " GitGutter undo change.
 nmap <leader>v :split $MYVIMRC<CR>      " edit vimrc in a split.
 nnoremap <C-J> <C-W><C-J>               " map spilt navigation Ctrl+J (up)
 nnoremap <C-K> <C-W><C-K>               " map split navigation Ctrl+K (down)
 nnoremap <C-L> <C-W><C-L>               " map split navigation Ctrl+L (right)
 nnoremap <C-H> <C-W><C-H>               " map split navigation Ctrl+H (left)
-set splitbelow                          " Open new split panes to bottom
-set splitright                          " Open new split panes to right
