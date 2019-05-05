@@ -122,7 +122,7 @@
 	"show_tab_close_buttons": false,
 	"spell_check": false,
 	"tab_size": 2,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
