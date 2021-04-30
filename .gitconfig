@@ -1,0 +1,19 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Matthew Ell
+	email = matt.ell@alley.co
+[core]
+	excludesfile = /Users/mattell/.gitignore_global
+	autocrlf = input
+[log]
+	date = relative
+[rerere]
+	enabled = true
+[pull]
+	rebase = false
+[init]
+	templatedir = ~/.git-templates
