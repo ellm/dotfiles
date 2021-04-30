@@ -90,13 +90,11 @@
 		"styleguide"
 	],
 	"font_face": "Fira Code",
-	"font_size": 12,
+	"font_size": 13,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Javascript",
-		"SideBarEnhancements",
 		"TidyHTML5",
 		"Vintage"
 	],
@@ -119,10 +117,11 @@
 	"scroll_past_end": true,
 	"show_definitions": false,
 	"show_full_path": true,
+	"show_git_status": false,
 	"show_tab_close_buttons": false,
 	"spell_check": false,
 	"tab_size": 2,
-	"theme": "Default.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,

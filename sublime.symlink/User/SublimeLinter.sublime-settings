@@ -5,16 +5,11 @@
             "disable": false,
             "args": [],
             "errors": [
-                "FIXME",
-                "@fixme"
+                "FIXME:",
             ],
             "excludes": [],
             "warnings": [
-                "NOTE",
-                "README",
-                "TODO",
-                "@note",
-                "@readme",
+                "TODO:",
                 "@todo"
             ]
         },
@@ -63,6 +58,7 @@
         "stylelint": {
             "disable": false,
             "args": [],
+            "selector": "source.postcss",
             "excludes": [
                 "**/build/**",
                 "**/node_modules/**",
@@ -80,7 +76,7 @@
     "show_marks_in_minimap": false,
     "styles": [
         {
-            "mark_style": "outline",
+            "mark_style": "squiggly_underline",
             "priority": 1,
             "scope": "region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter",
             "icon": "none",
@@ -89,7 +85,7 @@
             ]
         },
         {
-            "mark_style": "outline",
+            "mark_style": "squiggly_underline",
             "priority": 1,
             "scope": "region.redish markup.deleted.sublime_linter markup.error.sublime_linter",
             "icon": "none",

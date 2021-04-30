@@ -5,7 +5,6 @@
 	],
 	"installed_packages":
 	[
-		"A File Icon",
 		"Alignment",
 		"AutoFileName",
 		"Babel",
@@ -18,16 +17,15 @@
 		"Handlebars",
 		"Package Control",
 		"PHP-Twig",
-		"PlainTasks",
 		"Sass",
 		"SideBarEnhancements",
-		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-annotations",
 		"SublimeLinter-eslint",
 		"SublimeLinter-json",
 		"SublimeLinter-phpcs",
 		"SublimeLinter-stylelint",
+		"Syntax Highlighting for PostCSS",
 		"termX"
 	]
 }
