@@ -79,8 +79,6 @@ nnoremap <leader>x :GitGutterNextHunk   " GitGutter next hunk.
 nnoremap <leader>z :GitGutterUndoHunk   " GitGutter undo change.
 
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='oceanicnext'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#branch#enabled=1
 
@@ -137,7 +135,6 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabLongestEnhanced = 1
 let g:SuperTabLongestHighlight = 1
 
-Plugin 'mhartington/oceanic-next'
 Plugin 'ap/vim-css-color'
 
 " All Plugins must be added before the following line
@@ -149,7 +146,7 @@ syntax enable
 if (has("termguicolors"))
   set termguicolors
 endif
-colorscheme OceanicNext
+colorscheme default
 if !has("gui_macvim")
   set term=screen-256color
   let $TERM='screen-256color'
