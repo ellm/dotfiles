@@ -2,6 +2,10 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/broadway/bin:$PATH
 
+# Load NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Customize the command prompt:
 autoload -U colors && colors
 PROMPT='[%F{208}ellm%f %F{039}%1~%f ]$ '
@@ -47,6 +51,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 ## File and directory viewing
 alias ls="ls -lG"
+## Text Editing
+alias vi="mvim"
+alias vim="mvim"
 
 # Include external configs:
 [ -f "$HOME/.zshrclocal" ] && source "$HOME/.zshrclocal"

@@ -37,9 +37,9 @@ set splitbelow                   " open new split panes to bottom
 set splitright                   " open new split panes to right
 
 if has("gui_macvim")
-set macligatures                 " enable font ligatures
-set guifont=Fira\ Code:h12       " set a pretty font
-set linespace=3                  " line height (for MacVim)
+" set macligatures                 " enable font ligatures
+set guifont=Menlo:h12           " set a pretty font
+set linespace=4                  " line height (for MacVim)
 set guioptions-=R                " get rid of right macvim scrollbar
 set guioptions-=L                " get rid of left macvim scrollbar
 set guioptions-=r                " get rid of right macvim scrollbar
@@ -48,11 +48,35 @@ set guioptions-=m                " get rid of menu bar
 set guioptions-=T                " get rid of toolbar
 endif
 
+" ------- Custom Mappings -------
+nnoremap <SPACE> <Nop>                  " remove any mapping for spacebar
+let mapleader = " "                     " map leader to spacebar
+" disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+nnoremap <CR> :nohlsearch<cr>           " redraw screen / remove search highlighting
+nnoremap <Leader>w :bd<CR>              " delete buffer
+nnoremap <leader>t :enew<cr>            " open a new empty buffer
+nnoremap <leader>] :bn<CR>              " go to next buffer
+nnoremap <leader>[ :bp<CR>              " go to previous buffer
+nnoremap <leader>i *                    " search for current word in file
+nnoremap <leader>k :m .-2<CR>==         " move current line up
+nnoremap <leader>j :m .+1<CR>==         " move current line down
+nmap <leader>v :split $MYVIMRC<CR>      " edit vimrc in a split.
+nnoremap <C-J> <C-W><C-J>               " map spilt navigation Ctrl+J (up)
+nnoremap <C-K> <C-W><C-K>               " map split navigation Ctrl+K (down)
+nnoremap <C-L> <C-W><C-L>               " map split navigation Ctrl+L (right)
+nnoremap <C-H> <C-W><C-H>               " map split navigation Ctrl+H (left)
+
 " ------- Plugin Settings -------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'lifepillar/vim-solarized8'
 
 Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
@@ -67,9 +91,9 @@ Plugin 'kien/ctrlp.vim'
 let g:ctrlp_switch_buffer = 0 " always open files in a new buffer
 let g:ctrlp_working_path_mode = 0 " start search in directory vim started
 let g:ctrlp_custom_ignore = {
- \ 'dir': 'build\|static\|node_modules\|DS_Store\|git',
- \ 'file': 'tags',
- \ }
+\ 'dir': 'build\|static\|node_modules\|DS_Store\|git',
+\ 'file': 'tags',
+\ }
 let g:ctrlp_use_caching=0 " update without having to reload
 nnoremap <Leader>p :CtrlP<CR>           " fire CtrlP fuzzy finder
 
@@ -103,8 +127,7 @@ let g:ale_javascript_eslint_options = '--config ./.eslintrc'
 " let g:ale_php_phpcs_executable = '~/broadway/bin/phpcs'
 " let g:ale_php_phpcs_standard = 'WordPress'
 
-" TODO:
-Plugin 'prettier/vim-prettier'
+" Plugin 'prettier/vim-prettier'
 " let g:prettier#config#single_quote = 'true'
 
 Plugin 'pangloss/vim-javascript'
@@ -144,41 +167,21 @@ filetype plugin indent on    " required
 " ------- Theme/Syntax Settings -------
 syntax enable
 if (has("termguicolors"))
-  set termguicolors
+set termguicolors
 endif
-colorscheme default
+set background=light
+colorscheme solarized8
 if !has("gui_macvim")
-  set term=screen-256color
-  let $TERM='screen-256color'
+set term=screen-256color
+let $TERM='screen-256color'
 endif
 " Disable visual bell and flash
 set noerrorbells visualbell t_vb=
 if has('autocmd')
-  autocmd GUIEnter * set visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 endif
 
 " ------- Preferences per filetype -------
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS smartindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP smartindent shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
 autocmd FileType javascript,json,javascript.jsx setlocal omnifunc=javascriptcomplete#CompleteJS smartindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-
-" ------- Custom Mappings -------
-let mapleader = ";"                     " map leader to semi-colon
-" disable arrow keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-nnoremap <CR> :nohlsearch<cr>           " redraw screen / remove search highlighting
-nnoremap <Leader>w :bd<CR>              " delete buffer
-nnoremap <leader>t :enew<cr>            " open a new empty buffer
-nnoremap <leader>] :bn<CR>              " go to next buffer
-nnoremap <leader>[ :bp<CR>              " go to previous buffer
-nnoremap <leader>i *                    " search for current word in file
-nnoremap <leader>k :m .-2<CR>==         " move current line up
-nnoremap <leader>j :m .+1<CR>==         " move current line down
-nmap <leader>v :split $MYVIMRC<CR>      " edit vimrc in a split.
-nnoremap <C-J> <C-W><C-J>               " map spilt navigation Ctrl+J (up)
-nnoremap <C-K> <C-W><C-K>               " map split navigation Ctrl+K (down)
-nnoremap <C-L> <C-W><C-L>               " map split navigation Ctrl+L (right)
-nnoremap <C-H> <C-W><C-H>               " map split navigation Ctrl+H (left)
