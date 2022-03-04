@@ -16,5 +16,7 @@
 	enabled = true
 [pull]
 	rebase = false
+[push]
+	default = current
 [init]
 	templatedir = ~/.git-templates
