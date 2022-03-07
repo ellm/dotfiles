@@ -6,8 +6,9 @@
 [user]
 	name = Matthew Ell
 	email = matt.ell@alley.co
+	username = ellm
 [core]
-	excludesfile = /Users/mattell/.gitignore_global
+	excludesfile = /Users/ellm/.gitignore_global
 	autocrlf = input
 	editor = mvim
 [log]
