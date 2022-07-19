@@ -1,4 +1,5 @@
 " ------- General Settings -------
+
 set nocompatible                 " be iMproved, required
 filetype off                     " required for Vundle
 
@@ -48,7 +49,14 @@ set guioptions-=m                " get rid of menu bar
 set guioptions-=T                " get rid of toolbar
 endif
 
+set cursorline " hightlight current line
+let &t_SI = "\e[6 q" " change cursor while in insert mode.
+let &t_EI = "\e[2 q"
+
+set mouse=a " allow mouse
+
 " ------- Custom Mappings -------
+
 nnoremap <SPACE> <Nop>                  " remove any mapping for spacebar
 let mapleader = " "                     " map leader to spacebar
 " disable arrow keys
@@ -142,16 +150,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
 
-Plugin 'rizzatti/dash.vim'
-nmap <silent> <leader>d <Plug>DashSearch
-
-Plugin 'SirVer/ultisnips'
-let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsEditSplit="vertical"
-
 Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
@@ -169,12 +167,8 @@ syntax enable
 if (has("termguicolors"))
 set termguicolors
 endif
-set background=light
+set background=dark
 colorscheme solarized8
-if !has("gui_macvim")
-set term=screen-256color
-let $TERM='screen-256color'
-endif
 " Disable visual bell and flash
 set noerrorbells visualbell t_vb=
 if has('autocmd')

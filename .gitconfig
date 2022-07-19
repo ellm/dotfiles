@@ -10,7 +10,6 @@
 [core]
 	excludesfile = /Users/ellm/.gitignore_global
 	autocrlf = input
-	editor = mvim
 [log]
 	date = relative
 [rerere]
