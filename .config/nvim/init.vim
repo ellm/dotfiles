@@ -64,6 +64,8 @@ Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'sbdchd/neoformat'
 
+Plug 'mhinz/vim-startify'
+
 call plug#end()
 
 " Theme 
@@ -74,6 +76,10 @@ set background=dark
 
 " Eslint...
 autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
+
+" Startify
+" Update session automatically as you exit vim
+let g:startify_session_persistence = 1
 
 lua << EOF
 
