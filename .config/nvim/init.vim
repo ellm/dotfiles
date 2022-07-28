@@ -133,7 +133,7 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true,
-    disable = { "go", "python" },
+    disable = { "go", "python", "javascript", "javascriptreact"},
   },
   autotag = { enable = true },
   -- A list of parser names, or "all"
@@ -175,7 +175,7 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {},
-  extensions = {}
+  extensions = { 'nvim-tree' }
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -185,6 +185,44 @@ require('lspconfig')['tsserver'].setup{
     vim.keymap.set("n","K", vim.lsp.buf.hover, {buffer=0})
     vim.keymap.set("n","gd", vim.lsp.buf.definition, {buffer=0})
   end,
+}
+
+-- Needed for CSS intelephense
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
+require('lspconfig').cssls.setup{
+  capabilities= capabilities,
+  on_attach = function()
+    vim.keymap.set("n","K", vim.lsp.buf.hover, {buffer=0})
+    vim.keymap.set("n","gd", vim.lsp.buf.definition, {buffer=0})
+  end,
+  settings = {
+    css = {
+      -- Set to false due to poor support with postcss. Stylelint handles validation
+      validate = false
+    },
+    less = {
+      validate = true
+    },
+    scss = {
+      validate = true
+    }
+  }
+}
+
+-- Needed for Stylelint
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
+require('lspconfig').stylelint_lsp.setup{
+  capabilities= capabilities,
+  on_attach = function()
+    vim.keymap.set("n","K", vim.lsp.buf.hover, {buffer=0})
+    vim.keymap.set("n","gd", vim.lsp.buf.definition, {buffer=0})
+  end,
+  settings = {
+    stylelintplus = {
+     -- autoFixOnSave = true, todo these not work.
+     -- autoFixOnFormat = true,
+    }
+  }
 }
 
 -- Needed for Php intelephense
