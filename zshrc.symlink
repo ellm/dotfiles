@@ -40,10 +40,12 @@ zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
 # Alias:
+alias ga="git add"
 alias gaa="git add -A"
 alias gss="git status -s"
 alias gco="git checkout"
-alias gl="git log"
+alias gl="git log --oneline"
+alias glm="git log"
 alias gc="git commit -m"
 alias gcbail="git merge --abort"
 alias gcp="git cherry-pick"
@@ -63,6 +65,33 @@ alias vi="vim"
 glg() {
   git log --oneline --grep="$1"
 }
+
+# Startup screen
+cat <<'EOF'
+░        ░░  ░░░░░░░░  ░░░░░░░░  ░░░░  ░
+▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒   ▒▒   ▒
+▓      ▓▓▓▓  ▓▓▓▓▓▓▓▓  ▓▓▓▓▓▓▓▓        ▓
+█  ████████  ████████  ████████  █  █  █
+█        ██        ██        ██  ████  █
+
+EOF
+echo "================"
+php -v
+echo "================"
+print "Node version: $(node -v)"
+print "NPM version:  $(npm -v)"
+echo "================"
+
+# Check for outdated global packages (but only once per day)
+PACKAGES_OUTDATED_CACHE="$HOME/.packages_outdated_last_run"
+TODAY=$(date +%Y-%m-%d)
+if [ ! -f "$PACKAGES_OUTDATED_CACHE" ] || [ "$(cat "$PACKAGES_OUTDATED_CACHE")" != "$TODAY" ]; then
+  echo "Checking for outdated global npm packages..."
+  npm outdated -g --depth=0 || echo "No outdated packages found or npm error."
+  echo "Checking for outdated homebrew packages..."
+  brew outdated
+  echo "$TODAY" > "$PACKAGES_OUTDATED_CACHE"
+fi
 
 # Include external configs:
 [ -f "$HOME/.zshrclocal" ] && source "$HOME/.zshrclocal"
