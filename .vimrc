@@ -163,12 +163,20 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " ------- Theme/Syntax Settings -------
-syntax enable
+syntax on
 if (has("termguicolors"))
 set termguicolors
 endif
-set background=dark
 colorscheme solarized8
+
+" Sync Vim background with macOS Light/Dark mode on startup
+let s:appearance = substitute(system('defaults read -g AppleInterfaceStyle 2>/dev/null'), '\n', '', '')
+
+if s:appearance ==# 'Dark'
+    set background=dark
+else
+    set background=light
+endif
 " Disable visual bell and flash
 set noerrorbells visualbell t_vb=
 if has('autocmd')
